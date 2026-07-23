@@ -61,3 +61,17 @@ También agregué la clase ArchivoJson para manejar toda la persistencia de dato
 Además implementé la clase Habitacion con sus validaciones, constructor y su CRUD completo para controlar la disponibilidad.
 Agregué la clase Pago, que también viene con sus validaciones y su CRUD para vincular cada pago directamente con su reserva.
 Con este reinicio el proyecto quedó totalmente ordenado.
+
+23/07/2027
+Fernando Calderon
+Reincorporación de Cliente y Reserva en Database
+- Se agregó nuevamente la clase Cliente al proyecto con sus propiedades y validaciones simples.
+- Se reincorporó la clase Reserva siguiendo el mismo esquema oficial (campos privados, propiedades públicas con get/set).
+- Ambas clases fueron registradas en la clase Database para que se manejen en listas globales y se guarden en el archivo JSON.
+- Ajustes realizados para que las búsquedas y operaciones CRUD se hagan por ID como identificador único.
+- Con esto, Database reconoce correctamente Cliente y Reserva junto con las demás entidades del sistema.
+- Menú principal actualizado con CRUD de Cliente y Reserva
+- Se añadieron los casos 1 al 5 para ejecutar las funciones CRUD de Cliente (crear, listar, buscar, actualizar, eliminar).
+- Se añadieron los casos 11 al 15 para ejecutar las funciones CRUD de Reserva (crear, listar, buscar, actualizar, eliminar).
+- El menú ahora reconoce correctamente las operaciones de Cliente y Reserva conectadas con Database.
+- Proyecto listo para ejecutar con todas las opciones integradas.

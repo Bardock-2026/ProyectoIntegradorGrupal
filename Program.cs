@@ -48,15 +48,21 @@ class Program
 
             switch (opcion)
             {
-               
-
+                case 1: Cliente.CrearCliente(); break;
+                case 2: Cliente.ListarClientes(); break;
+                case 3: Cliente.BuscarCliente(); break;
+                case 4: Cliente.ActualizarCliente(); break;
+                case 5: Cliente.EliminarCliente(); break;
                 case 6: Habitacion.CrearHabitacion(); break;
                 case 7: Habitacion.ListarHabitaciones(); break;
                 case 8: Habitacion.BuscarHabitacion(); break;
                 case 9: Habitacion.ActualizarHabitacion(); break;
-               
-
-
+                case 10: Habitacion.EliminarHabitacion(); break;
+                case 11: Reserva.CrearReserva(); break;
+                case 12: Reserva.ListarReservas(); break;
+                case 13: Reserva.BuscarReserva(); break;
+                case 14: Reserva.ActualizarReserva(); break;
+                case 15: Reserva.EliminarReserva(); break;
                 case 16: Pago.CrearPago(); break;
                 case 17: Pago.ListarPagos(); break;
                 case 18: Pago.BuscarPago(); break;
@@ -64,6 +70,7 @@ class Program
                 case 20: Pago.EliminarPago(); break;
                 case 0: Console.WriteLine("Saliendo del sistema..."); break;
                 default: Console.WriteLine("Opción inválida."); Console.ReadLine(); break;
+
             }
         } while (opcion != 0);
     }
