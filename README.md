@@ -51,3 +51,13 @@ Motivo del cambio:
 La clase Database es el núcleo de persistencia del proyecto HotelReservas, permitiendo que los datos de clientes, reservas, habitaciones y pagos se mantengan organizados y disponibles entre ejecuciones.
 Se estableció una estructura clara y ordenada para garantizar la escalabilidad del sistema y facilitar la integración con las clases de negocio (Cliente, Reserva, Habitacion, Pago).
 Este commit asegura que el proyecto ya cuenta con un mecanismo sólido de almacenamiento y recuperación de información.
+
+22/07/2026
+Jonathan Anchundia
+Tuvimos un inconveniente de coordinación en el equipo y la versión anterior del código nos había quedado bastante desordenada e inconsistente.
+Por eso, preferimos no complicarnos y decidimos rehacer esta parte desde cero para dejar todo bien estructurado, limpio y funcionando como tiene que ser.
+Se agregó el archivo inicial en Program.cs por un menú interactivo en consola, así que ahora se puede navegar súper fácil entre clientes, habitaciones, reservas y pagos.
+También agregué la clase ArchivoJson para manejar toda la persistencia de datos en archivos JSON y no perder la información al cerrar el programa.
+Además implementé la clase Habitacion con sus validaciones, constructor y su CRUD completo para controlar la disponibilidad.
+Agregué la clase Pago, que también viene con sus validaciones y su CRUD para vincular cada pago directamente con su reserva.
+Con este reinicio el proyecto quedó totalmente ordenado.
