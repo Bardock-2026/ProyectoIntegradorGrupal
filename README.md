@@ -36,3 +36,18 @@ Motivo del cambio:
 Continuando con el reinicio del proyecto HotelReservas, se implementó la clase Reserva como parte fundamental del sistema de gestión.
 Esta clase asegura la relación entre Cliente y Habitación, además de manejar la lógica de disponibilidad de habitaciones.
 Se mantiene la misma estructura y estilo limpio definido previamente en la clase Cliente, garantizando coherencia en todo el proyecto.
+
+Implementación de la clase Database
+Descripción:
+Se creó la clase Database dentro de la carpeta Generales.
+La clase se definió como static para centralizar la gestión de datos del sistema.
+Se implementaron:
+Rutas de archivos JSON para cada entidad (Clientes, Reservas, Habitaciones, Pagos), almacenados en la carpeta Datos dentro del directorio base del proyecto.
+Listas globales (List<Cliente>, List<Reserva>, List<Habitacion>, List<Pago>) que funcionan como repositorio en memoria.
+Método CargarDatos() que inicializa las listas cargando información desde los archivos JSON, creando la carpeta Datos si no existe.
+Método GuardarDatos() que guarda todas las listas en sus respectivos archivos JSON.
+Métodos individuales (GuardarClientes, GuardarReservas, GuardarHabitaciones, GuardarPagos) para persistir cada entidad de forma independiente.
+Motivo del cambio:
+La clase Database es el núcleo de persistencia del proyecto HotelReservas, permitiendo que los datos de clientes, reservas, habitaciones y pagos se mantengan organizados y disponibles entre ejecuciones.
+Se estableció una estructura clara y ordenada para garantizar la escalabilidad del sistema y facilitar la integración con las clases de negocio (Cliente, Reserva, Habitacion, Pago).
+Este commit asegura que el proyecto ya cuenta con un mecanismo sólido de almacenamiento y recuperación de información.
