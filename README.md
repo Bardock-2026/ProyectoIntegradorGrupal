@@ -15,3 +15,24 @@ Propiedades públicas con validaciones simples y mensajes claros en consola.
 Constructor con asignación automática de ID incremental desde la lista global en Database.
 Método Imprimir() para mostrar datos del cliente.
 CRUD completo (CrearCliente, ListarClientes, BuscarCliente, ActualizarCliente, EliminarCliente).
+
+Implementación de la clase Reserva
+Descripción:
+Se agregó la clase Reserva dentro de la carpeta HotelReservas.
+La clase incluye:
+Campos privados: id, cliente, habitacion, fechaInicio, fechaFin.
+Propiedades públicas con validaciones simples:
+Validación de cliente y habitación no nulos.
+Validación de fechas (la fecha de fin debe ser mayor a la fecha de inicio).
+Constructor con validaciones iniciales y asignación automática de ID incremental desde la lista global en Database.
+Método Imprimir() para mostrar los datos completos de la reserva.
+CRUD completo:
+CrearReserva: permite registrar una nueva reserva, validando cliente, habitación y fechas.
+ListarReservas: muestra todas las reservas registradas.
+BuscarReserva: busca una reserva por ID.
+ActualizarReserva: permite modificar las fechas de una reserva existente.
+EliminarReserva: elimina una reserva y libera la habitación asociada.
+Motivo del cambio:
+Continuando con el reinicio del proyecto HotelReservas, se implementó la clase Reserva como parte fundamental del sistema de gestión.
+Esta clase asegura la relación entre Cliente y Habitación, además de manejar la lógica de disponibilidad de habitaciones.
+Se mantiene la misma estructura y estilo limpio definido previamente en la clase Cliente, garantizando coherencia en todo el proyecto.
