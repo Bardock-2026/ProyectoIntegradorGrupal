@@ -97,6 +97,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
             Pago pago = new Pago(reserva, monto);
             Database.Pagos.Add(pago);
+            Database.GuardarPagos();
 
             Console.WriteLine("Pago registrado exitosamente!!");
             Console.ReadLine();
@@ -152,6 +153,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 objPago.Monto = Convert.ToDecimal(Console.ReadLine());
 
                 objPago.FechaPago = DateTime.Now;
+                Database.GuardarPagos();
 
                 Console.WriteLine("Pago actualizado exitosamente!!");
             }
@@ -178,6 +180,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 if (Console.ReadLine().ToUpper() == "S")
                 {
                     Database.Pagos.Remove(objPago);
+                    Database.GuardarPagos();
                     Console.WriteLine("Pago eliminado exitosamente!!");
                 }
                 else

@@ -129,6 +129,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
             Reserva reserva = new Reserva(cliente, habitacion, inicio, fin);
             Database.Reservas.Add(reserva);
             habitacion.Estado = "Ocupada";
+            Database.GuardarReservas();
 
             Console.WriteLine("Reserva creada exitosamente!!");
             Console.ReadLine();
@@ -184,6 +185,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
                 Console.Write("Ingrese nueva fecha fin (yyyy-mm-dd): ");
                 objReserva.FechaFin = Convert.ToDateTime(Console.ReadLine());
+                Database.GuardarReservas();
 
                 Console.WriteLine("Reserva actualizada exitosamente!!");
             }
@@ -211,6 +213,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 {
                     objReserva.Habitacion.Estado = "Disponible";
                     Database.Reservas.Remove(objReserva);
+                    Database.GuardarReservas();
                     Console.WriteLine("Reserva eliminada y habitación liberada!!");
                 }
                 else

@@ -127,7 +127,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
             Cliente objCliente = new Cliente(nombre, cedula, telefono, email);
             Database.Clientes.Add(objCliente);
-
+            Database.GuardarClientes();
             Console.WriteLine("Cliente creado exitosamente!!");
             Console.ReadLine();
         }
@@ -185,7 +185,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 objCliente.Telefono = Console.ReadLine();
                 Console.Write("Ingrese el nuevo email: ");
                 objCliente.Email = Console.ReadLine();
-
+                Database.GuardarClientes();
                 Console.WriteLine("Cliente actualizado exitosamente!!");
             }
             else
@@ -211,6 +211,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 if (Console.ReadLine().ToUpper() == "S")
                 {
                     Database.Clientes.Remove(objCliente);
+                    Database.GuardarClientes();
                     Console.WriteLine("Cliente eliminado exitosamente!!");
                 }
                 else

@@ -75,3 +75,16 @@ Reincorporación de Cliente y Reserva en Database
 - Se añadieron los casos 11 al 15 para ejecutar las funciones CRUD de Reserva (crear, listar, buscar, actualizar, eliminar).
 - El menú ahora reconoce correctamente las operaciones de Cliente y Reserva conectadas con Database.
 - Proyecto listo para ejecutar con todas las opciones integradas.
+
+fix: persistencia de datos en CRUD
+
+Me di cuenta que el programa, aunque funcionaba en las operaciones de crear,
+actualizar y eliminar, no cumplía con el requerimiento de guardar en memoria.
+El detalle era que olvidé llamar a los métodos de guardado (GuardarClientes,
+GuardarReservas, GuardarHabitaciones, GuardarPagos) después de cada operación
+de modificación. Esto provocaba que los cambios se perdieran al cerrar el
+programa.
+
+Se corrigió agregando las llamadas a los métodos de guardado en las funciones
+de crear, actualizar y eliminar de cada clase, asegurando la persistencia en
+JSON.

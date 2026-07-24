@@ -70,8 +70,8 @@ class Program
                 case 20: Pago.EliminarPago(); break;
                 case 0: Console.WriteLine("Saliendo del sistema..."); break;
                 default: Console.WriteLine("Opción inválida."); Console.ReadLine(); break;
-
             }
         } while (opcion != 0);
     }
 }
+

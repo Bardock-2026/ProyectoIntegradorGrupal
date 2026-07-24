@@ -105,6 +105,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
             Habitacion objHabitacion = new Habitacion(tipo, precio, estado);
             Database.Habitaciones.Add(objHabitacion);
+            Database.GuardarHabitaciones();
 
             Console.WriteLine("Habitación creada exitosamente!!");
             Console.ReadLine();
@@ -163,6 +164,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
                 Console.Write("Ingrese el nuevo estado (Disponible/Ocupada): ");
                 objHabitacion.Estado = Console.ReadLine();
+                Database.GuardarHabitaciones();
 
                 Console.WriteLine("Habitación actualizada exitosamente!!");
             }
@@ -189,6 +191,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 if (Console.ReadLine().ToUpper() == "S")
                 {
                     Database.Habitaciones.Remove(objHabitacion);
+                    Database.GuardarHabitaciones();
                     Console.WriteLine("Habitación eliminada exitosamente!!");
                 }
                 else
@@ -204,4 +207,5 @@ namespace ProyectoIntegradorGrupal.HotelReservas
         }
     }
 }
+
 
