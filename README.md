@@ -99,3 +99,8 @@ Actualización de reservas con cambio de habitación
 - Se libera la habitación anterior al actualizar y se marca la nueva como ocupada.
 - Se mantiene la lógica de actualización de fechas de inicio y fin.
 - Se asegura persistencia en la base de datos después de los cambios.
+- Corrección en actualización de reservas: mantener IDs automáticos
+
+    - Se ajustó el método ActualizarReserva para no modificar los IDs de cliente ni habitación.
+    - Ahora la actualización permite cambiar la referencia a otro cliente existente sin alterar su identificador único.
+    - Se permite cambiar la referencia a otra habitación disponible, liberando la anterior y ocupando la nueva, sin modificar su Id.

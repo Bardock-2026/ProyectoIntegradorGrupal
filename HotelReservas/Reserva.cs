@@ -187,15 +187,27 @@ namespace ProyectoIntegradorGrupal.HotelReservas
                 Console.Write("Ingrese nueva fecha fin (yyyy-mm-dd): ");
                 objReserva.FechaFin = Convert.ToDateTime(Console.ReadLine());
 
-                Console.Write("Ingrese el nuevo ID de la habitación: ");
-                int nuevoIdHabitacion = Convert.ToInt32(Console.ReadLine());
-                Habitacion nuevaHabitacion = Database.Habitaciones.Find(h => h.Id == nuevoIdHabitacion);
+                
+                Console.Write("Ingrese el ID del nuevo cliente: ");
+                int idCliente = Convert.ToInt32(Console.ReadLine());
+                Cliente nuevoCliente = Database.Clientes.Find(c => c.Id == idCliente);
 
-                if (nuevaHabitacion == null || nuevaHabitacion.Estado == "Ocupada")
+                if (nuevoCliente != null)
                 {
-                    Console.WriteLine("La nueva habitación no está disponible.");
+                    objReserva.Cliente = nuevoCliente;
+                    Console.WriteLine("Cliente actualizado exitosamente!!");
                 }
                 else
+                {
+                    Console.WriteLine("Cliente no encontrado. Se mantiene el anterior.");
+                }
+
+               
+                Console.Write("Ingrese el ID de la nueva habitación: ");
+                int idHabitacion = Convert.ToInt32(Console.ReadLine());
+                Habitacion nuevaHabitacion = Database.Habitaciones.Find(h => h.Id == idHabitacion);
+
+                if (nuevaHabitacion != null && nuevaHabitacion.Estado == "Disponible")
                 {
                     
                     objReserva.Habitacion.Estado = "Disponible";
@@ -206,9 +218,14 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
                     Console.WriteLine("Habitación actualizada exitosamente!!");
                 }
+                else
+                {
+                    Console.WriteLine("La nueva habitación no está disponible. Se mantiene la anterior.");
+                }
 
-                
+              
                 Database.GuardarReservas();
+                Console.WriteLine("Reserva actualizada exitosamente!!");
             }
             else
             {
