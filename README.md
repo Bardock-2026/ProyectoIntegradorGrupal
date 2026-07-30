@@ -100,7 +100,10 @@ Actualización de reservas con cambio de habitación
 - Se mantiene la lógica de actualización de fechas de inicio y fin.
 - Se asegura persistencia en la base de datos después de los cambios.
 - Corrección en actualización de reservas: mantener IDs automáticos
-
-    - Se ajustó el método ActualizarReserva para no modificar los IDs de cliente ni habitación.
-    - Ahora la actualización permite cambiar la referencia a otro cliente existente sin alterar su identificador único.
-    - Se permite cambiar la referencia a otra habitación disponible, liberando la anterior y ocupando la nueva, sin modificar su Id.
+- Se ajustó el método ActualizarReserva para no modificar los IDs de cliente ni habitación.
+- Ahora la actualización permite cambiar la referencia a otro cliente existente sin alterar su identificador único.
+- Se permite cambiar la referencia a otra habitación disponible, liberando la anterior y ocupando la nueva, sin modificar su Id.
+- Se agregó la llamada a Database.GuardarHabitaciones() después de cambiar el estado de una habitación.
+- Al crear una reserva, la habitación asignada pasa a "Ocupada" y se guarda en el archivo de habitaciones.
+- Al eliminar una reserva, la habitación asociada se libera ("Disponible") y se guarda también.
+- Se asegura que al reiniciar el programa, las habitaciones mantengan su estado correcto sincronizado con las reservas.

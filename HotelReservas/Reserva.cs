@@ -130,6 +130,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
             Database.Reservas.Add(reserva);
             habitacion.Estado = "Ocupada";
             Database.GuardarReservas();
+            Database.GuardarHabitaciones();
 
             Console.WriteLine("Reserva creada exitosamente!!");
             Console.ReadLine();
@@ -225,6 +226,7 @@ namespace ProyectoIntegradorGrupal.HotelReservas
 
               
                 Database.GuardarReservas();
+                Database.GuardarHabitaciones();
                 Console.WriteLine("Reserva actualizada exitosamente!!");
             }
             else
