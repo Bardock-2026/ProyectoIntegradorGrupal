@@ -180,14 +180,35 @@ namespace ProyectoIntegradorGrupal.HotelReservas
             {
                 objReserva.Imprimir();
 
+                
                 Console.Write("Ingrese nueva fecha inicio (yyyy-mm-dd): ");
                 objReserva.FechaInicio = Convert.ToDateTime(Console.ReadLine());
 
                 Console.Write("Ingrese nueva fecha fin (yyyy-mm-dd): ");
                 objReserva.FechaFin = Convert.ToDateTime(Console.ReadLine());
-                Database.GuardarReservas();
 
-                Console.WriteLine("Reserva actualizada exitosamente!!");
+                Console.Write("Ingrese el nuevo ID de la habitación: ");
+                int nuevoIdHabitacion = Convert.ToInt32(Console.ReadLine());
+                Habitacion nuevaHabitacion = Database.Habitaciones.Find(h => h.Id == nuevoIdHabitacion);
+
+                if (nuevaHabitacion == null || nuevaHabitacion.Estado == "Ocupada")
+                {
+                    Console.WriteLine("La nueva habitación no está disponible.");
+                }
+                else
+                {
+                    
+                    objReserva.Habitacion.Estado = "Disponible";
+
+                    
+                    objReserva.Habitacion = nuevaHabitacion;
+                    nuevaHabitacion.Estado = "Ocupada";
+
+                    Console.WriteLine("Habitación actualizada exitosamente!!");
+                }
+
+                
+                Database.GuardarReservas();
             }
             else
             {

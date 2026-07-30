@@ -88,3 +88,14 @@ programa.
 Se corrigió agregando las llamadas a los métodos de guardado en las funciones
 de crear, actualizar y eliminar de cada clase, asegurando la persistencia en
 JSON.
+
+
+Fernando Calderon
+30/07/2026
+Actualización de reservas con cambio de habitación
+
+- Se modificó el método ActualizarReserva para permitir cambiar la habitación asociada.
+- Se agregó validación para verificar que la nueva habitación exista y esté disponible.
+- Se libera la habitación anterior al actualizar y se marca la nueva como ocupada.
+- Se mantiene la lógica de actualización de fechas de inicio y fin.
+- Se asegura persistencia en la base de datos después de los cambios.
